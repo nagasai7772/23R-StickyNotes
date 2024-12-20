@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <style>
+      #container {
+        height: 150px;
+        width: 150px;
+        background-color: rgb(107, 103, 103);
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #container #add {
+        height: 100px;
+        width: 100px;
+        padding: 10px;
+        color: white;
+      }
+      #note {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        justify-content: space-evenly;
+        gap: 15px;
+      }
+      .add_note {
+        resize: none;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        gap: 10px;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        /* display: flex; */
+        /* justify-content: space-between; */
+      }
+      img
+      {
+           float:right;
+           
+          
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <ion-icon name="add-circle" id="add"></ion-icon>
+    </div>
+    <div id="note"></div>
+    
+    <script>
+      let Addnote = document.getElementById("add");
+      let remove=document.getElementById("delete")
+      Addnote.addEventListener("click", () => {
+        let stickynote = document.createElement("div");
+        stickynote.setAttribute("contenteditable", true);
+
+        stickynote.style.backgroundColor = "green";
+        stickynote.className = "add_note";
+
+        stickynote.style.height = "350px";
+        stickynote.style.width = "200px";
+        stickynote.style.color = "white";
+        let note = document.getElementById("note");
+        note.append(stickynote);
+        let icon=document.createElement("img")
+        icon.src="https://img.freepik.com/premium-vector/red-cross-mark-icon-negative-choice-symbol-sign-app-button_744955-339.jpg"
+        icon.style.height="30px"
+        icon.style.width="30px"
+        stickynote.append(icon)
+      });
+    </script>
+  </body>
+</html>
